@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h2 {
+            color: #003366; /* Navy Blue */
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #003366; /* Navy Blue */
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            color: #003366; /* Navy Blue */
+            font-size: 14px;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #003366; /* Navy Blue */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #00509E; /* Lighter Navy Blue */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Information for Admission Prediction</h2>
+        <form action="/predict" method="POST">
+            <div class="form-group">
+                <label for="GRE_score">GRE Score:</label><br>
+                <input type="number" id="GRE_score" name="GRE_score" required><br>
+            </div>
+
+            <div class="form-group">
+                <label for="TOEFL_score">TOEFL Score:</label><br>
+                <input type="number" id="TOEFL_score" name="TOEFL_score" required><br>
+            </div>
+
+            <div class="form-group">
+                <label for="university_rating">University Rating:</label><br>
+                <input type="number" id="university_rating" name="university_rating" required><br>
+            </div>
+
+            <div class="form-group">
+                <label for="SOP">SOP:</label><br>
+                <input type="number" id="SOP" name="SOP" required><br>
+            </div>
+
+            <div class="form-group">
+                <label for="LOR">LOR:</label><br>
+                <input type="number" id="LOR" name="LOR" required><br>
+            </div>
+
+            <div class="form-group">
+                <label for="CGPA">CGPA:</label><br>
+                <input type="number" id="CGPA" name="CGPA" required><br>
+            </div>
+
+            <div class="form-group">
+                <label for="research">Research (1 = Yes, 0 = No):</label><br>
+                <input type="number" id="research" name="research" min="0" max="1" required><br>
+            </div>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
